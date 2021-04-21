@@ -30,7 +30,7 @@ This is possible as it acts as a wrapper to your XAML and provides you the event
 # How to style the button for different states
 There are 2 ways to style the button -
 - [DataTriggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#data-triggers)
-- [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager)
+- [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager) _(not recommended)_
 
 ## DataTriggers
 Simply add a DataTrigger to any element and bind it to the `State` property of the button - 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata minClientVersion="">
+    <id>IeuanWalker.StateButton</id>
+    <version>0.0.1-alpha</version>
+    <title>State button for Xamarin.Forms</title>
+    <authors>Ieuan Walker</authors>
+    <owners>Ieuan Walker</owners>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/IeuanWalker/Xamarin.Forms.StateButton</projectUrl>
+    <description>With this control you are able to create any style of button. This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.</description>
+    <summary>With this control you are able to create any style of button. This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.</summary>
+    <tags>xamarin.forms control button  xamarin flexible custom</tags>
+    <dependencies>
+      <group>
+        <dependency id="Xamarin.Forms" version="5.0.0.2012" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- .NET Standard -->
+    <file src="../Scr/StateButton/bin/Release/netstandard2.0/StateButton.dll" target="lib/netstandard1.0" />
+
+    <!-- Core PCL -->
+    <file src="../Scr/StateButton/bin/Release/netstandard2.0/StateButton.dll" target="lib/portable-win+net45+wp80+win81+wpa81" />
+
+    <!-- Xamarin.iOS -->
+    <file src="../Scr/StateButton.iOS/bin/Release/StateButton.dll" target="lib/xamarinios10" />
+    <file src="../Scr/StateButton.iOS/bin/Release/StateButton.iOS.dll" target="lib/xamarinios10" />
+
+    <!-- Xamarin.Android -->
+    <file src="../Scr/StateButton.Android/bin/Release/StateButton.dll" target="lib/monoandroid10" />
+    <file src="../Scr/StateButton.Android/bin/Release/StateButton.Android.dll" target="lib/monoandroid10" />
+  </files>
+</package>

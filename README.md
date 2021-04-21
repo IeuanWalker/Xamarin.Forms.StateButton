@@ -58,7 +58,7 @@ Simple add a DataTrigger to any element and bind it to the `State` property of t
 
 
 ## VisualStateManager
-You can also use the VisualStateManager, but this is NOT RECOMENDED due to a bug in Xamarin.forms that causes a `NullReferenceException` when `TargetName` property is used, heres a link to the bug - https://github.com/xamarin/Xamarin.Forms/issues/10710.
+You can also use the VisualStateManager, but this is <strong>NOT RECOMENDED</strong> due to a bug in Xamarin.forms that causes a `NullReferenceException` when `TargetName` property is used, heres a link to the bug - https://github.com/xamarin/Xamarin.Forms/issues/10710.
 If you still want to use it -
 ```xaml
 <stateButton:StateButton BackgroundColor="Red" HorizontalOptions="Center">

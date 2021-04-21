@@ -34,8 +34,8 @@
                     </Frame>
                 </stateButton:StateButton.Content>
             </stateButton:StateButton>
-            <Label FontSize="Medium" Text="TouchedDown" />
-            <stateButton:StateButton HorizontalOptions="Center" TouchedDown="StateButton_OnTouchedDown">
+            <Label FontSize="Medium" Text="Pressed" />
+            <stateButton:StateButton HorizontalOptions="Center" Pressed="StateButton_OnTouchedDown">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10" BackgroundColor="Red">
                         <Frame.Triggers>
@@ -57,8 +57,8 @@
                     </Frame>
                 </stateButton:StateButton.Content>
             </stateButton:StateButton>
-            <Label FontSize="Medium" Text="TouchedUp" />
-            <stateButton:StateButton HorizontalOptions="Center" TouchedUp="StateButton_OnTouchedUp">
+            <Label FontSize="Medium" Text="Released" />
+            <stateButton:StateButton HorizontalOptions="Center" Released="StateButton_OnTouchedUp">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10" BackgroundColor="Red">
                         <Frame.Triggers>
@@ -111,8 +111,8 @@
                     </Frame>
                 </stateButton:StateButton.Content>
             </stateButton:StateButton>
-            <Label FontSize="Medium" Text="TouchedDown" />
-            <stateButton:StateButton HorizontalOptions="Center" TouchedDownCommand="{Binding TouchDownCommand}">
+            <Label FontSize="Medium" Text="Pressed" />
+            <stateButton:StateButton HorizontalOptions="Center" PressedCommand="{Binding TouchDownCommand}">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10" BackgroundColor="Red">
                         <Frame.Triggers>
@@ -134,8 +134,8 @@
                     </Frame>
                 </stateButton:StateButton.Content>
             </stateButton:StateButton>
-            <Label FontSize="Medium" Text="TouchedUp" />
-            <stateButton:StateButton HorizontalOptions="Center" TouchedUpCommand="{Binding TouchUpCommand}">
+            <Label FontSize="Medium" Text="Released" />
+            <stateButton:StateButton HorizontalOptions="Center" ReleasedCommand="{Binding TouchUpCommand}">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10" BackgroundColor="Red">
                         <Frame.Triggers>

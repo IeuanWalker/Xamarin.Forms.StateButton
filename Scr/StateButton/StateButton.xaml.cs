@@ -36,44 +36,44 @@ namespace StateButton
             set => SetValue(ClickedCommandParameterProperty, value);
         }
 
-        public static readonly BindableProperty TouchedDownCommandProperty = BindableProperty.Create(nameof(TouchedDownCommand), typeof(ICommand), typeof(StateButton));
+        public static readonly BindableProperty PressedCommandProperty = BindableProperty.Create(nameof(PressedCommand), typeof(ICommand), typeof(StateButton));
 
-        public ICommand TouchedDownCommand
+        public ICommand PressedCommand
         {
-            get => (ICommand)GetValue(TouchedDownCommandProperty);
-            set => SetValue(TouchedDownCommandProperty, value);
+            get => (ICommand)GetValue(PressedCommandProperty);
+            set => SetValue(PressedCommandProperty, value);
         }
 
-        public static readonly BindableProperty TouchedDownCommandParameterProperty = BindableProperty.Create(nameof(TouchedDownCommandParameter), typeof(object), typeof(StateButton));
+        public static readonly BindableProperty PressedCommandParameterProperty = BindableProperty.Create(nameof(PressedCommandParameter), typeof(object), typeof(StateButton));
 
-        public object TouchedDownCommandParameter
+        public object PressedCommandParameter
         {
-            get => GetValue(TouchedDownCommandParameterProperty);
-            set => SetValue(TouchedDownCommandParameterProperty, value);
+            get => GetValue(PressedCommandParameterProperty);
+            set => SetValue(PressedCommandParameterProperty, value);
         }
 
-        public static readonly BindableProperty TouchedUpCommandProperty = BindableProperty.Create(nameof(TouchedUpCommand), typeof(ICommand), typeof(StateButton));
+        public static readonly BindableProperty ReleasedCommandProperty = BindableProperty.Create(nameof(ReleasedCommand), typeof(ICommand), typeof(StateButton));
 
-        public ICommand TouchedUpCommand
+        public ICommand ReleasedCommand
         {
-            get => (ICommand)GetValue(TouchedUpCommandProperty);
-            set => SetValue(TouchedUpCommandProperty, value);
+            get => (ICommand)GetValue(ReleasedCommandProperty);
+            set => SetValue(ReleasedCommandProperty, value);
         }
 
-        public static readonly BindableProperty TouchedUpCommandParameterProperty = BindableProperty.Create(nameof(TouchedUpCommandParameter), typeof(object), typeof(StateButton));
+        public static readonly BindableProperty ReleasedCommandParameterProperty = BindableProperty.Create(nameof(ReleasedCommandParameter), typeof(object), typeof(StateButton));
 
-        public object TouchedUpCommandParameter
+        public object ReleasedCommandParameter
         {
-            get => GetValue(TouchedUpCommandParameterProperty);
-            set => SetValue(TouchedUpCommandParameterProperty, value);
+            get => GetValue(ReleasedCommandParameterProperty);
+            set => SetValue(ReleasedCommandParameterProperty, value);
         }
 
         #endregion Commands
 
         #region Events
 
-        public event EventHandler<EventArgs> TouchedDown;
-        public event EventHandler<EventArgs> TouchedUp;
+        public event EventHandler<EventArgs> Pressed;
+        public event EventHandler<EventArgs> Released;
         public event EventHandler<EventArgs> Clicked;
 
         #endregion
@@ -93,8 +93,8 @@ namespace StateButton
         {
             if (!IsEnabled) return;
 
-            TouchedDown?.Invoke(this, EventArgs.Empty);
-            TouchedDownCommand?.Execute(TouchedDownCommandParameter);
+            Pressed?.Invoke(this, EventArgs.Empty);
+            PressedCommand?.Execute(PressedCommandParameter);
 
             try
             {
@@ -111,8 +111,8 @@ namespace StateButton
         {
             if (!IsEnabled) return;
 
-            TouchedUp?.Invoke(this, EventArgs.Empty);
-            TouchedUpCommand?.Execute(TouchedUpCommandParameter);
+            Released?.Invoke(this, EventArgs.Empty);
+            ReleasedCommand?.Execute(ReleasedCommandParameter);
 
             try
             {
@@ -132,6 +132,5 @@ namespace StateButton
             Clicked?.Invoke(this, EventArgs.Empty);
             ClickedCommand?.Execute(ClickedCommandParameter);
         }
-
     }
 }

@@ -17,12 +17,12 @@ namespace App
 
         private async void StateButton_OnTouchedDown(object sender, EventArgs e)
         {
-            await DisplayAlert ("TouchedDown event", "Button pressed", "OK");
+            await DisplayAlert ("Pressed event", "Button pressed", "OK");
         }
 
         private async void StateButton_OnTouchedUp(object sender, EventArgs e)
         {
-            await DisplayAlert ("TouchedUp event", "Button released", "OK");
+            await DisplayAlert ("Released event", "Button released", "OK");
         }
     }
 }

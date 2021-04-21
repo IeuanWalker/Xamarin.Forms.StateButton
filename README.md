@@ -27,12 +27,12 @@ This is possible as it acts as a wrapper to your XAML and provides you the event
 | ReleasedCommand | Triggerd when the button is released |
 
 
-# How to style the button for different states
+## How to style the button for different states
 There are 2 ways to style the button -
 - [DataTriggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#data-triggers)
-- [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager)
+- [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager) _(not recommended)_
 
-## DataTriggers
+### DataTriggers
 Simply add a DataTrigger to any element and bind it to the `State` property of the button - 
 ```xaml
 <stateButton:StateButton HorizontalOptions="Center">
@@ -60,7 +60,7 @@ Simply add a DataTrigger to any element and bind it to the `State` property of t
 ```
 
 
-## VisualStateManager
+### VisualStateManager
 You can also use the VisualStateManager, but this is <strong>NOT RECOMENDED</strong> due to a bug in Xamarin.forms that causes a `NullReferenceException` when `TargetName` property is used, heres a link to the bug - https://github.com/xamarin/Xamarin.Forms/issues/10710.
 If you still want to use it -
 ```xaml
@@ -87,6 +87,10 @@ If you still want to use it -
 </stateButton:StateButton>
 ```
 
+## Examples
+| Designs from a production app | Complex example |
+|------|------|
+|| <p>This shows the StateButton as the wrapper for a card. When the card is pressed or clicked then the title is set to bold and the border goes darker.</p> <p> The card also shakes when clicked, this shows that it works with the [AnimationBehaviours from XamarinCommunityToolkit](https://github.com/xamarin/XamarinCommunityToolkit). </p><p> It also shows that it works with nested TapGestureRecognizer, XF native button and nested StateButton - </p> ![alt text](/Docs/ComplexExample.gif)|
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton?ref=badge_large)

@@ -11,14 +11,14 @@ This is possible as it acts as a wrapper to you XAML and provides you the events
 
 ### Events
 | Event | What it does |
-|---|---|---- |
+|---|---|
 | Clicked | Triggerd when the button is pressed and released |
 | TouchedDown | Triggerd when the button is pressed |
 | TouchedUp | Triggerd when the button is released |
 
 ### Commands
 | Command | What it does |
-|---|---|---- |
+|---|---|
 | ClickedCommand | Triggerd when the button is pressed and released |
 | TouchedDownCommand | Triggerd when the button is pressed |
 | TouchedUpCommand | Triggerd when the button is released |

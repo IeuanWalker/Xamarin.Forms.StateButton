@@ -1,4 +1,7 @@
-# Xamarin.Forms.StateButton
+# Xamarin.Forms.StateButton  [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton?ref=badge_shield)
 
 With this control you are able to create any style of button.
 This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.
@@ -83,3 +86,7 @@ If you still want to use it -
     </VisualStateManager.VisualStateGroups>
 </stateButton:StateButton>
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton?ref=badge_large)

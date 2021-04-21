@@ -1,15 +1,12 @@
-﻿using System.ComponentModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace App
 {
-    public class TestViewModel : INotifyPropertyChanged
+    public class TestViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public ICommand ClickedCommand => new Command(async _ => await Application.Current.MainPage.DisplayAlert("Clicked command", "Button clicked", "Ok"));
-        public ICommand TouchDownCommand => new Command(async _ => await Application.Current.MainPage.DisplayAlert("TouchDown command", "Button pressed", "Ok"));
-        public ICommand TouchUpCommand => new Command(async _ => await Application.Current.MainPage.DisplayAlert("TouchUp command", "Button released", "Ok"));
+        public ICommand PressedCommand => new Command(async _ => await Application.Current.MainPage.DisplayAlert("Pressed command", "Button pressed", "Ok"));
+        public ICommand ReleasedCommand => new Command(async _ => await Application.Current.MainPage.DisplayAlert("Released command", "Released released", "Ok"));
     }
 }

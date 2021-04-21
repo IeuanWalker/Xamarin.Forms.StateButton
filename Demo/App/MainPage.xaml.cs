@@ -15,12 +15,12 @@ namespace App
             await DisplayAlert ("Clicked event", "Button clicked", "OK");
         }
 
-        private async void StateButton_OnTouchedDown(object sender, EventArgs e)
+        private async void StateButton_OnPressed(object sender, EventArgs e)
         {
             await DisplayAlert ("Pressed event", "Button pressed", "OK");
         }
 
-        private async void StateButton_OnTouchedUp(object sender, EventArgs e)
+        private async void StateButton_OnReleased(object sender, EventArgs e)
         {
             await DisplayAlert ("Released event", "Button released", "OK");
         }

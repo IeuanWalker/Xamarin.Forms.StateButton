@@ -30,7 +30,7 @@ There are 2 ways to style the button -
 - [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager)
 
 ## DataTriggers
-Simple add a DataTrigger to any element and bind it to the `State` property of the button - 
+Simply add a DataTrigger to any element and bind it to the `State` property of the button - 
 ```xaml
 <stateButton:StateButton HorizontalOptions="Center" TouchedUpCommand="{Binding TouchUpCommand}">
     <stateButton:StateButton.Content>

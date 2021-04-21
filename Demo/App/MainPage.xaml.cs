@@ -12,17 +12,17 @@ namespace App
 
         private async void StateButton_OnClicked(object sender, EventArgs e)
         {
-            await DisplayAlert ("Clicked event", "Button clicked", "OK");
+            await DisplayAlert("Clicked event", "Button clicked", "OK");
         }
 
         private async void StateButton_OnPressed(object sender, EventArgs e)
         {
-            await DisplayAlert ("Pressed event", "Button pressed", "OK");
+            await DisplayAlert("Pressed event", "Button pressed", "OK");
         }
 
         private async void StateButton_OnReleased(object sender, EventArgs e)
         {
-            await DisplayAlert ("Released event", "Button released", "OK");
+            await DisplayAlert("Released event", "Button released", "OK");
         }
 
         private void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
@@ -39,22 +39,21 @@ namespace App
                 Description.MaxLines = int.MaxValue;
                 textExtender.Text = "See less...";
             }
-
         }
 
         private async void Card_OnClicked(object sender, EventArgs e)
         {
-            await DisplayAlert ("Card click", string.Empty, "OK");
+            await DisplayAlert("Card click", string.Empty, "OK");
         }
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
-            await DisplayAlert ("XF button clicked", string.Empty, "OK");
+            await DisplayAlert("XF button clicked", string.Empty, "OK");
         }
 
         private async void NestButton_OnClicked(object sender, EventArgs e)
         {
-             await DisplayAlert ("Nested state button clicked", string.Empty, "OK");
+            await DisplayAlert("Nested state button clicked", string.Empty, "OK");
         }
     }
 }

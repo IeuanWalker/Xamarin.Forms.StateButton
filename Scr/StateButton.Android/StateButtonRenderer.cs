@@ -1,14 +1,14 @@
-﻿using System.Linq;
-using Android.Content;
+﻿using Android.Content;
 using Android.Views;
-using StateButton;
 using StateButton.Android;
 using StateButton.Extensions;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using View = Xamarin.Forms.View;
 
 [assembly: ExportRenderer(typeof(StateButton.StateButton), typeof(StateButtonRenderer))]
+
 namespace StateButton.Android
 {
     public class StateButtonRenderer : ViewRenderer

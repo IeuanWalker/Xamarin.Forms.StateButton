@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(StateButton.StateButton), typeof(StateButtonRenderer))]
+
 namespace StateButton.iOS
 {
     public class StateButtonRenderer : ViewRenderer

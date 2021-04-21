@@ -162,8 +162,37 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
+            <!--  Visual state manager  -->
+            <Label FontSize="Large" Text="Visual state manager" />
+            <stateButton:StateButton BackgroundColor="Red" HorizontalOptions="Center">
+                <stateButton:StateButton.Content>
+                    <Frame Padding="20,10" BackgroundColor="Transparent">
+                        <Label Text="Test" TextColor="White" />
+                    </Frame>
+                </stateButton:StateButton.Content>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="ButtonStates">
+                        <VisualState Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Blue" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="NotPressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </stateButton:StateButton>
+
+            <BoxView Margin="0,30"
+                     BackgroundColor="LightGray"
+                     HeightRequest="1"
+                     HorizontalOptions="Fill" />
 
             <!--  Experiment  -->
+            <Label FontSize="Large" Text="Experiment" />
             <stateButton:StateButton HorizontalOptions="Fill">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10">
@@ -189,7 +218,6 @@
                     </Frame>
                 </stateButton:StateButton.Content>
             </stateButton:StateButton>
-
         </StackLayout>
     </ScrollView>
 </ContentPage>

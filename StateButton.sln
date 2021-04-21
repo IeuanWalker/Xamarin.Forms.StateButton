@@ -13,11 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Android", "Demo\App.And
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.iOS", "Demo\App.iOS\App.iOS.csproj", "{5FE3B6DE-9779-4CDC-9D92-36C9A416E4E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateButton", "Scr\StateButton\StateButton.csproj", "{D21329D7-337A-4B03-9F59-520DCFCFC01B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateButton", "Scr\StateButton\StateButton.csproj", "{D21329D7-337A-4B03-9F59-520DCFCFC01B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateButton.Android", "Scr\StateButton.Android\StateButton.Android.csproj", "{837F2A4D-7A56-4B08-9CC5-8D9DD75A577F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateButton.iOS", "Scr\StateButton.iOS\StateButton.iOS.csproj", "{43DD689A-3918-43EB-B654-8E1C54F23C72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01211964-A0E5-42CF-AADA-16ED6F2C0F4A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

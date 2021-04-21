@@ -1,4 +1,6 @@
-# Xamarin.Forms.StateButton
+# Xamarin.Forms.StateButton  [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 With this control you are able to create any style of button.
 This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.

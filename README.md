@@ -1,7 +1,7 @@
 # Xamarin.Forms.StateButton
 
 With this control you are able to create any style of button.
-This is possible as it acts as a wrapper to you XAML and provides you the events/ commands to dind too and exposes a `StateEnum` that you can bind to, to change the button style.
+This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.
 
 ## What can I do with it?
 ### Properties
@@ -11,17 +11,17 @@ This is possible as it acts as a wrapper to you XAML and provides you the events
 
 ### Events
 | Event | What it does |
-|---|---|---- |
+|---|---|
 | Clicked | Triggerd when the button is pressed and released |
-| TouchedDown | Triggerd when the button is pressed |
-| TouchedUp | Triggerd when the button is released |
+| Pressed | Triggerd when the button is pressed |
+| Released | Triggerd when the button is released |
 
 ### Commands
 | Command | What it does |
-|---|---|---- |
+|---|---|
 | ClickedCommand | Triggerd when the button is pressed and released |
-| TouchedDownCommand | Triggerd when the button is pressed |
-| TouchedUpCommand | Triggerd when the button is released |
+| PressedCommand | Triggerd when the button is pressed |
+| ReleasedCommand | Triggerd when the button is released |
 
 
 # How to style the button for different states
@@ -30,9 +30,9 @@ There are 2 ways to style the button -
 - [VisualStateManager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager)
 
 ## DataTriggers
-Simple add a DataTrigger to any element and bind it to the `State` property of the button - 
+Simply add a DataTrigger to any element and bind it to the `State` property of the button - 
 ```xaml
-<stateButton:StateButton HorizontalOptions="Center" TouchedUpCommand="{Binding TouchUpCommand}">
+<stateButton:StateButton HorizontalOptions="Center">
     <stateButton:StateButton.Content>
         <Frame Padding="20,10" BackgroundColor="Red">
             <Frame.Triggers>
@@ -58,7 +58,7 @@ Simple add a DataTrigger to any element and bind it to the `State` property of t
 
 
 ## VisualStateManager
-You can also use the VisualStateManager, but this is NOT RECOMENDED due to a bug in Xamarin.forms that causes a `NullReferenceException` when `TargetName` property is used, heres a link to the bug - https://github.com/xamarin/Xamarin.Forms/issues/10710.
+You can also use the VisualStateManager, but this is <strong>NOT RECOMENDED</strong> due to a bug in Xamarin.forms that causes a `NullReferenceException` when `TargetName` property is used, heres a link to the bug - https://github.com/xamarin/Xamarin.Forms/issues/10710.
 If you still want to use it -
 ```xaml
 <stateButton:StateButton BackgroundColor="Red" HorizontalOptions="Center">

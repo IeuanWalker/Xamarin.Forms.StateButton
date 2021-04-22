@@ -12,6 +12,7 @@
     <description>With this control you are able to create any style of button. This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.</description>
     <summary>With this control you are able to create any style of button. This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.</summary>
     <tags>xamarin.forms control button  xamarin flexible custom</tags>
+    <icon>logo.jpg</icon>
     <dependencies>
       <group>
         <dependency id="Xamarin.Forms" version="5.0.0.2012" />
@@ -19,6 +20,8 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="logo.jpg" target="" />
+
     <!-- .NET Standard -->
     <file src="../Scr/StateButton/bin/Release/netstandard2.0/StateButton.dll" target="lib/netstandard1.0" />
 

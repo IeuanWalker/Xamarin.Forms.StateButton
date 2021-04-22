@@ -27,6 +27,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{1C19C13A-11D6-46E9-B226-FED95D9CD305}"
 	ProjectSection(SolutionItems) = preProject
 		NuGet\IeuanWalker.StateButton.nuspec = NuGet\IeuanWalker.StateButton.nuspec
+		NuGet\logo.jpg = NuGet\logo.jpg
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{32F2A375-0F05-4CFF-AF2F-DF86AB7C7C2B}"

@@ -1,4 +1,5 @@
 ﻿using Foundation;
+using StateButton.iOS;
 using UIKit;
 
 namespace App.iOS
@@ -18,6 +19,8 @@ namespace App.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            StateButtonRenderer.Init();
+
             Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -6,6 +6,19 @@
 With this control you are able to create any style of button.
 This is possible as it acts as a wrapper to your XAML and provides you the events/ commands and properties to bind too.
 
+## How to use it?
+Install the [NuGet package](https://www.nuget.org/packages/IeuanWalker.StateButton) into your shared project project
+```
+Install-Package IeuanWalker.StateButton
+```
+
+For iOS the control needs to be initialised in you `AppDelegate.cs` before `Forms.Init();`
+```csharp
+using StateButton.iOS;
+.............
+StateButtonRenderer.Init();
+```
+
 ## What can I do with it?
 ### Properties
 | Property | What it does | Extra info |

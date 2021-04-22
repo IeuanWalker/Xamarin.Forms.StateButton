@@ -1,7 +1,5 @@
 using Foundation;
-using StateButton.Extensions;
 using StateButton.iOS;
-using System.ComponentModel;
 using System.Linq;
 using UIKit;
 using Xamarin.Forms;
@@ -13,14 +11,8 @@ namespace StateButton.iOS
 {
     public class StateButtonRenderer : ViewRenderer
     {
-        public static void Init() { }
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        public new static void Init()
         {
-            base.OnElementPropertyChanged(sender, e);
-
-            // Fix Xamarin.Forms Frame BackgroundColor Bug (https://github.com/xamarin/Xamarin.Forms/issues/2218)
-            if (e.PropertyName == nameof(Element.BackgroundColor))
-                Layer.BackgroundColor = Element.BackgroundColor.ToUIColor().CGColor;
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<View> e)
@@ -29,23 +21,19 @@ namespace StateButton.iOS
 
             if (e.OldElement != null) return;
 
-            // Fix Xamarin.Forms Frame BackgroundColor Bug (https://github.com/xamarin/Xamarin.Forms/issues/2218)
-            Layer.BackgroundColor = e.NewElement.BackgroundColor.ToUIColor().CGColor;
-
             if (!e.NewElement.GestureRecognizers.Any())
                 return;
 
             if (e.NewElement.GestureRecognizers.All(x => x.GetType() != typeof(TouchGestureRecognizer)))
                 return;
 
-            // Clicked
             AddGestureRecognizer(new UITapGestureRecognizer(() =>
             {
-                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                 {
                     if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                     {
-                        touchGestureRecognizer?.Clicked();
+                        touchGestureRecognizer.Clicked();
                     }
                 }
             }));
@@ -55,11 +43,11 @@ namespace StateButton.iOS
         {
             base.TouchesMoved(touches, evt);
 
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
             {
                 if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                 {
-                    touchGestureRecognizer?.TouchUp();
+                    touchGestureRecognizer.Released();
                 }
             }
         }
@@ -68,11 +56,11 @@ namespace StateButton.iOS
         {
             base.TouchesBegan(touches, evt);
 
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
             {
                 if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                 {
-                    touchGestureRecognizer?.TouchDown();
+                    touchGestureRecognizer.Pressed();
                 }
             }
         }
@@ -81,11 +69,11 @@ namespace StateButton.iOS
         {
             base.TouchesCancelled(touches, evt);
 
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
             {
                 if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                 {
-                    touchGestureRecognizer?.TouchUp();
+                    touchGestureRecognizer.Released();
                 }
             }
         }

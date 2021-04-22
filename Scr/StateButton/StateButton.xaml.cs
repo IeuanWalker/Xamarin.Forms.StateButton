@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 namespace StateButton
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StateButton : ContentView
+    public partial class StateButton
     {
         #region Bindable Properties
 
@@ -14,6 +14,7 @@ namespace StateButton
 		/// Backing BindableProperty for the <see cref="State"/> property.
 		/// </summary>
         public static readonly BindableProperty StateProperty = BindableProperty.Create(nameof(State), typeof(ButtonStateEnum), typeof(StateButton), ButtonStateEnum.NotPressed, BindingMode.OneWayToSource);
+
         /// <summary>
 		/// Property that gets updated depending on the button state. This is a bindable property.
 		/// </summary>
@@ -31,6 +32,7 @@ namespace StateButton
         /// Backing BindableProperty for the <see cref="ClickedCommand"/> property.
         /// </summary>
         public static readonly BindableProperty ClickedCommandProperty = BindableProperty.Create(nameof(ClickedCommand), typeof(ICommand), typeof(StateButton));
+
         /// <summary>
         /// Command that is triggered when the button is clicked. This is a bindable property.
         /// </summary>
@@ -39,10 +41,12 @@ namespace StateButton
             get => (ICommand)GetValue(ClickedCommandProperty);
             set => SetValue(ClickedCommandProperty, value);
         }
+
         /// <summary>
         /// Backing BindableProperty for the <see cref="ClickedCommandParameter"/> property.
         /// </summary>
         public static readonly BindableProperty ClickedCommandParameterProperty = BindableProperty.Create(nameof(ClickedCommandParameter), typeof(object), typeof(StateButton));
+
         /// <summary>
         /// Property that gets returned when  <see cref="ClickedCommand" /> is executed. This is a bindable property.
         /// </summary>
@@ -51,10 +55,12 @@ namespace StateButton
             get => GetValue(ClickedCommandParameterProperty);
             set => SetValue(ClickedCommandParameterProperty, value);
         }
+
         /// <summary>
         /// Backing BindableProperty for the <see cref="PressedCommand"/> property.
         /// </summary>
         public static readonly BindableProperty PressedCommandProperty = BindableProperty.Create(nameof(PressedCommand), typeof(ICommand), typeof(StateButton));
+
         /// <summary>
         /// Command that is triggered when the button is pressed. This is a bindable property.
         /// </summary>
@@ -63,10 +69,12 @@ namespace StateButton
             get => (ICommand)GetValue(PressedCommandProperty);
             set => SetValue(PressedCommandProperty, value);
         }
+
         /// <summary>
         /// Backing BindableProperty for the <see cref="PressedCommandParameter"/> property.
         /// </summary>
         public static readonly BindableProperty PressedCommandParameterProperty = BindableProperty.Create(nameof(PressedCommandParameter), typeof(object), typeof(StateButton));
+
         /// <summary>
         /// Property that gets returned when  <see cref="PressedCommand" /> is executed. This is a bindable property.
         /// </summary>
@@ -75,10 +83,12 @@ namespace StateButton
             get => GetValue(PressedCommandParameterProperty);
             set => SetValue(PressedCommandParameterProperty, value);
         }
+
         /// <summary>
         /// Backing BindableProperty for the <see cref="ReleasedCommand"/> property.
         /// </summary>
         public static readonly BindableProperty ReleasedCommandProperty = BindableProperty.Create(nameof(ReleasedCommand), typeof(ICommand), typeof(StateButton));
+
         /// <summary>
         /// Command that is triggered when the button is released. This is a bindable property.
         /// </summary>
@@ -87,10 +97,12 @@ namespace StateButton
             get => (ICommand)GetValue(ReleasedCommandProperty);
             set => SetValue(ReleasedCommandProperty, value);
         }
+
         /// <summary>
         /// Backing BindableProperty for the <see cref="ReleasedCommandParameter"/> property.
         /// </summary>
         public static readonly BindableProperty ReleasedCommandParameterProperty = BindableProperty.Create(nameof(ReleasedCommandParameter), typeof(object), typeof(StateButton));
+
         /// <summary>
         /// Property that gets returned when  <see cref="ReleasedCommand" /> is executed. This is a bindable property.
         /// </summary>
@@ -108,10 +120,12 @@ namespace StateButton
 		/// Event that is triggered when button is pressed. This is a bindable property.
 		/// </summary>
         public event EventHandler<EventArgs> Pressed;
+
         /// <summary>
         /// Event that is triggered when button is released. This is a bindable property.
         /// </summary>
         public event EventHandler<EventArgs> Released;
+
         /// <summary>
         /// Event that is triggered when button is clicked. This is a bindable property.
         /// </summary>
@@ -125,12 +139,12 @@ namespace StateButton
 
             VisualStateManager.GoToState(this, nameof(ButtonStateEnum.NotPressed));
 
-            TouchRecognizer.TouchDown += TouchDownGesture;
-            TouchRecognizer.TouchUp += TouchUpGesture;
+            TouchRecognizer.Pressed += PressedGesture;
+            TouchRecognizer.Released += ReleasedGesture;
             TouchRecognizer.Clicked += ClickedGesture;
         }
 
-        private void TouchDownGesture()
+        private void PressedGesture()
         {
             if (!IsEnabled) return;
 
@@ -141,7 +155,7 @@ namespace StateButton
             State = ButtonStateEnum.Pressed;
         }
 
-        private void TouchUpGesture()
+        private void ReleasedGesture()
         {
             if (!IsEnabled) return;
 

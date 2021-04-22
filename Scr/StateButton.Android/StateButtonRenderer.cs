@@ -1,7 +1,6 @@
 ﻿using Android.Content;
 using Android.Views;
 using StateButton.Android;
-using StateButton.Extensions;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -34,32 +33,32 @@ namespace StateButton.Android
                 switch (te.Event.Action)
                 {
                     case MotionEventActions.Down:
-                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                             {
-                                touchGestureRecognizer?.TouchDown();
+                                touchGestureRecognizer.Pressed();
                             }
                         }
                         break;
 
                     case MotionEventActions.Up:
-                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                             {
-                                touchGestureRecognizer?.TouchUp();
-                                touchGestureRecognizer?.Clicked();
+                                touchGestureRecognizer.Released();
+                                touchGestureRecognizer.Clicked();
                             }
                         }
                         break;
 
                     case MotionEventActions.Cancel:
-                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x.GetType() == typeof(TouchGestureRecognizer)))
+                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                             {
-                                touchGestureRecognizer?.TouchUp();
+                                touchGestureRecognizer.Released();
                             }
                         }
                         break;

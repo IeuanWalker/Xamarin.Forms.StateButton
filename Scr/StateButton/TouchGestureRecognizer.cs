@@ -1,12 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace StateButton.Extensions
+namespace StateButton
 {
     public sealed class TouchGestureRecognizer : Element, IGestureRecognizer
     {
-        public Action TouchDown;
-        public Action TouchUp;
+        public Action Pressed;
+        public Action Released;
         public Action Clicked;
     }
 }

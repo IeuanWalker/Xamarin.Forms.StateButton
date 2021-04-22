@@ -165,9 +165,9 @@
                      HorizontalOptions="Fill" />
             <!--  Visual state manager  -->
             <Label FontSize="Large" Text="Visual state manager" />
-            <stateButton:StateButton BackgroundColor="Red" HorizontalOptions="Center">
+            <stateButton:StateButton HorizontalOptions="Center">
                 <stateButton:StateButton.Content>
-                    <Frame Padding="20,10" BackgroundColor="Transparent">
+                    <Frame Padding="20,10" BackgroundColor="Red">
                         <Label Text="Test" TextColor="White" />
                     </Frame>
                 </stateButton:StateButton.Content>
@@ -263,8 +263,8 @@
                                                          Value="Pressed">
                                                 <Setter Property="Background">
                                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                        <GradientStop Offset="1.0" Color="#259879" />
-                                                        <GradientStop Offset="0.1" Color="#015b66" />
+                                                        <GradientStop Offset="1.0" Color="Red" />
+                                                        <GradientStop Offset="0.1" Color="Orange" />
                                                     </LinearGradientBrush>
                                                 </Setter>
                                             </DataTrigger>
@@ -300,8 +300,8 @@
                                          Value="Pressed">
                                 <Setter Property="Background">
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStop Offset="1.0" Color="#259879" />
-                                        <GradientStop Offset="0.1" Color="#015b66" />
+                                        <GradientStop Offset="1.0" Color="Red" />
+                                        <GradientStop Offset="0.1" Color="Orange" />
                                     </LinearGradientBrush>
                                 </Setter>
                             </DataTrigger>

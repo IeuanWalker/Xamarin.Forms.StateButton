@@ -5,7 +5,9 @@
        xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton"
        Margin="0"
        Padding="0"
-       x:DataType="stateButton:StateButton">
+       x:DataType="stateButton:StateButton"
+       BackgroundColor="Transparent"
+       HasShadow="False">
     <Frame.GestureRecognizers>
         <stateButton:TouchGestureRecognizer x:Name="TouchRecognizer" />
     </Frame.GestureRecognizers>

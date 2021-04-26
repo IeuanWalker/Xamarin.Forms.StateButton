@@ -9,13 +9,13 @@ using Xamarin.Forms.Platform.iOS;
 
 namespace StateButton.iOS
 {
-    public class StateButtonRenderer : ViewRenderer
+    public class StateButtonRenderer : FrameRenderer
     {
         public new static void Init()
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<View> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
 

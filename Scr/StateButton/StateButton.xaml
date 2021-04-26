@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentView x:Class="StateButton.StateButton"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton">
-    <ContentView.GestureRecognizers>
+<Frame x:Class="StateButton.StateButton"
+       xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton"
+       Margin="0"
+       Padding="0"
+       x:DataType="stateButton:StateButton">
+    <Frame.GestureRecognizers>
         <stateButton:TouchGestureRecognizer x:Name="TouchRecognizer" />
-    </ContentView.GestureRecognizers>
-</ContentView>
+    </Frame.GestureRecognizers>
+</Frame>

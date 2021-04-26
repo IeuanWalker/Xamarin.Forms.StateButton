@@ -10,13 +10,13 @@ using View = Xamarin.Forms.View;
 
 namespace StateButton.Android
 {
-    public class StateButtonRenderer : ViewRenderer
+    public class StateButtonRenderer : FrameRenderer
     {
         public StateButtonRenderer(Context context) : base(context)
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<View> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
 

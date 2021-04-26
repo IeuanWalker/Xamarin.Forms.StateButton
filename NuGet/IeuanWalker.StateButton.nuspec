@@ -37,3 +37,5 @@
     <file src="../Scr/StateButton.Android/bin/Release/StateButton.Android.dll" target="lib/monoandroid10" />
   </files>
 </package>
+
+<!--nuget pack IeuanWalker.StateButton.nuspec -Version 0.0.4-alpha-->

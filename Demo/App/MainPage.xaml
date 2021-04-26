@@ -2,9 +2,9 @@
 <ContentPage x:Class="App.MainPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:app="clr-namespace:App;assembly=App"
-             xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton">
+             xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.BindingContext>
         <app:TestViewModel />
     </ContentPage.BindingContext>
@@ -13,7 +13,11 @@
             <!--  Events  -->
             <Label FontSize="Large" Text="Events" />
             <Label FontSize="Medium" Text="Clicked" />
-            <stateButton:StateButton Clicked="StateButton_OnClicked" HorizontalOptions="Center">
+            <stateButton:StateButton AutomationProperties.HelpText="Button"
+                                     AutomationProperties.IsInAccessibleTree="True"
+                                     AutomationProperties.Name="Test"
+                                     Clicked="StateButton_OnClicked"
+                                     HorizontalOptions="Center">
                 <stateButton:StateButton.Content>
                     <Frame Padding="20,10" BackgroundColor="Red">
                         <Frame.Triggers>

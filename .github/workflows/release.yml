@@ -16,9 +16,9 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build StateButton.sln --configuration Release --no-restore
+      run: dotnet build StateButton.sln --configuration Release
     - name: Create NuGet package
-      run: nuget pack NuGet/IeuanWalker.StateButton.nuspec -Version ${{ github.event.release.tag_name }}  -Properties Configuration=Release
+      run: nuget pack NuGet/IeuanWalker.StateButton.nuspec -Version ${{ github.event.release.tag_name }} -Properties Configuration=Release
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:

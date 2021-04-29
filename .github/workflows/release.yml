@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1.7.2
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build Scr/StateButton/StateButton.csproj --configuration Release --no-restore
+    - name: Create NuGet package
+      run: nuget pack NuGet/IeuanWalker.StateButton.nuspec -Version ${{ github.event.release.tag_name }}  -Properties Configuration=Release
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: NuGet package
+        path: "**/IeuanWalker.StateButton.${{ github.event.release.tag_name }}.nupkg"
+    - name: Publish NuGet package
+      run: dotnet nuget push **/IeuanWalker.StateButton.${{ github.event.release.tag_name }}.nupkg --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json

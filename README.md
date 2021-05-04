@@ -103,7 +103,7 @@ If you still want to use it -
 ## Examples
 | Designs from a production app | Complex example |
 |------|------|
-|| <p>This shows the StateButton as the wrapper for a card. When the card is pressed or clicked then the title is set to bold and the border goes darker.</p> <p> The card also shakes when clicked, this shows that it works with the [AnimationBehaviours from XamarinCommunityToolkit](https://github.com/xamarin/XamarinCommunityToolkit). </p><p> It also shows that it works with nested TapGestureRecognizer, XF native button and nested StateButton - </p> ![alt text](/Docs/ComplexExample.gif)|
+|![Production example of control](/Docs/prodExample.gif)| <p>This shows the StateButton as the wrapper for a card. When the card is pressed or clicked then the title is set to bold and the border goes darker.</p> <p> The card also shakes when clicked, this shows that it works with the [AnimationBehaviours from XamarinCommunityToolkit](https://github.com/xamarin/XamarinCommunityToolkit). </p><p> It also shows that it works with nested TapGestureRecognizer, XF native button and nested StateButton - </p> ![Complex example of control](/Docs/ComplexExample.gif)|
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FIeuanWalker%2FXamarin.Forms.StateButton?ref=badge_large)

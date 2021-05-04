@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{1C19C13A
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{32F2A375-0F05-4CFF-AF2F-DF86AB7C7C2B}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\ComplexExample.gif = Docs\ComplexExample.gif
+		Docs\prodExample.gif = Docs\prodExample.gif
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

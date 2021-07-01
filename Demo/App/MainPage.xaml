@@ -13,8 +13,7 @@
             <!--  Events  -->
             <Label FontSize="Large" Text="Events" />
             <Label FontSize="Medium" Text="Clicked" />
-            <stateButton:StateButton AutomationProperties.HelpText="Button"
-                                     AutomationProperties.IsInAccessibleTree="True"
+            <stateButton:StateButton AutomationProperties.IsInAccessibleTree="True"
                                      AutomationProperties.Name="Test"
                                      Clicked="StateButton_OnClicked"
                                      HorizontalOptions="Center">
@@ -90,7 +89,6 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-
             <!--  Commands  -->
             <Label FontSize="Large" Text="Commands" />
             <Label FontSize="Medium" Text="Clicked" />
@@ -195,7 +193,6 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-
             <!--  Complex  -->
             <Label FontSize="Large" Text="Complex" />
             <stateButton:StateButton Clicked="Card_OnClicked" HorizontalOptions="Fill">
@@ -233,12 +230,14 @@
                             <Image Source="https://instabug.com/blog/wp-content/uploads/2018/10/Oct_Articles_01_Xamarin.png" />
                             <Label x:Name="Description"
                                    Margin="20,0"
+                                   AutomationProperties.IsInAccessibleTree="True"
                                    FontSize="Default"
                                    HorizontalOptions="Center"
                                    LineBreakMode="TailTruncation"
                                    MaxLines="3"
                                    Text="I'm baby vape jean shorts hammock air plant gluten-free thundercats, DIY kale chips master cleanse kickstarter vinyl cronut iceland. Coloring book cold-pressed cray authentic seitan. Snackwave bicycle rights ramps hoodie shaman readymade. Kitsch venmo hella pug, chillwave squid four dollar toast hashtag." />
                             <Label Margin="20,0,20,10"
+                                   AutomationProperties.IsInAccessibleTree="True"
                                    HorizontalOptions="End"
                                    HorizontalTextAlignment="End"
                                    Text="See more..."
@@ -286,7 +285,6 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-
             <!--  Experiment  -->
             <Label FontSize="Large" Text="Experiment" />
             <stateButton:StateButton HorizontalOptions="Fill">

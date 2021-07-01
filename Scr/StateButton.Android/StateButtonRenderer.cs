@@ -4,7 +4,8 @@ using StateButton.Android;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-using View = Xamarin.Forms.View;
+using Android.Views.Accessibility;
+using AndroidView = Android.Views;
 
 [assembly: ExportRenderer(typeof(StateButton.StateButton), typeof(StateButtonRenderer))]
 
@@ -14,6 +15,7 @@ namespace StateButton.Android
     {
         public StateButtonRenderer(Context context) : base(context)
         {
+            SetAccessibilityDelegate(new MyAccessibilityDelegate());
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
@@ -65,5 +67,16 @@ namespace StateButton.Android
                 }
             };
         }
+
+        private class MyAccessibilityDelegate : AccessibilityDelegate
+        {
+            public override void OnInitializeAccessibilityNodeInfo(AndroidView.View host, AccessibilityNodeInfo info)
+            {
+                base.OnInitializeAccessibilityNodeInfo(host, info);
+                info.ClassName = "android.widget.Button";
+                info.Clickable = true;
+            }
+        }
+
     }
 }

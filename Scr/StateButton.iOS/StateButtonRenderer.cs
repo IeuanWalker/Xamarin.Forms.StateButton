@@ -19,6 +19,8 @@ namespace StateButton.iOS
         {
             base.OnElementChanged(e);
 
+            AccessibilityTraits = UIAccessibilityTrait.Button;
+
             if (e.OldElement != null) return;
 
             if (!e.NewElement.GestureRecognizers.Any())

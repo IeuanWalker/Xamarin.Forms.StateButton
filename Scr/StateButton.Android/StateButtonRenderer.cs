@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Android.Views.Accessibility;
 using AndroidView = Android.Views;
+using Android.Runtime;
 
 [assembly: ExportRenderer(typeof(StateButton.StateButton), typeof(StateButtonRenderer))]
 
@@ -66,6 +67,22 @@ namespace StateButton.Android
                         break;
                 }
             };
+        }
+
+        public override bool OnKeyUp([GeneratedEnum] Keycode keyCode, KeyEvent e)
+        {
+            if(keyCode == Keycode.Space || keyCode == Keycode.Enter)
+            {
+                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+                {
+                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                    {
+                        touchGestureRecognizer.Clicked();
+                    }
+                }
+            }
+
+            return base.OnKeyUp(keyCode, e);
         }
 
         private class MyAccessibilityDelegate : AccessibilityDelegate

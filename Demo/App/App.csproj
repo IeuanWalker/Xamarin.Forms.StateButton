@@ -19,4 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Scr\StateButton\StateButton.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ButtonNotInScrollViewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

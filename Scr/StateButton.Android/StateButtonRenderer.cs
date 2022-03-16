@@ -19,6 +19,7 @@ namespace StateButton.Android
             SetAccessibilityDelegate(new MyAccessibilityDelegate());
         }
 
+        private Rect rect;
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
             base.OnElementChanged(e);
@@ -33,9 +34,11 @@ namespace StateButton.Android
 
             Touch += (sender, te) =>
             {
+                var v = (AndroidView.View)sender;
                 switch (te.Event.Action)
                 {
                     case MotionEventActions.Down:
+                        rect = new Rect(v.Left, v.Top, v.Right, v.Bottom);
                         foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
@@ -46,12 +49,20 @@ namespace StateButton.Android
                         break;
 
                     case MotionEventActions.Up:
+                        
                         foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                             {
-                                touchGestureRecognizer.Released();
-                                touchGestureRecognizer.Clicked();
+                                if (rect.Contains(v.Left + (int)te.Event.GetX(), v.Top + (int)te.Event.GetY()))
+                                {
+                                    touchGestureRecognizer.Released();
+                                    touchGestureRecognizer.Clicked();
+                                }
+                                else
+                                {
+                                    touchGestureRecognizer.Released();
+                                }
                             }
                         }
                         break;
@@ -62,6 +73,18 @@ namespace StateButton.Android
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
                             {
                                 touchGestureRecognizer.Released();
+                            }
+                        }
+                        break;
+                    case MotionEventActions.Move:
+                        foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+                        {
+                            if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                            {
+                                if (!rect.Contains(v.Left + (int)te.Event.GetX(), v.Top + (int)te.Event.GetY()))
+                                {
+                                    touchGestureRecognizer.Released();
+                                }
                             }
                         }
                         break;

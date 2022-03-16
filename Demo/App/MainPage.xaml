@@ -4,13 +4,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:app="clr-namespace:App;assembly=App"
              xmlns:stateButton="clr-namespace:StateButton;assembly=StateButton"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.BindingContext>
         <app:TestViewModel />
     </ContentPage.BindingContext>
     <ScrollView>
         <StackLayout Padding="20,10">
-            <!--  Events  -->
+            <Button Clicked="BtnNotInScrollView_Clicked" Text="Test button not in scrollview" />
+
+            <!-- Events -->
             <Label FontSize="Large" Text="Events" />
             <Label FontSize="Medium" Text="Clicked" />
             <stateButton:StateButton AutomationProperties.IsInAccessibleTree="True"
@@ -89,7 +92,7 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-            <!--  Commands  -->
+            <!-- Commands -->
             <Label FontSize="Large" Text="Commands" />
             <Label FontSize="Medium" Text="Clicked" />
             <stateButton:StateButton ClickedCommand="{Binding ClickedCommand}" HorizontalOptions="Center">
@@ -165,7 +168,7 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-            <!--  Visual state manager  -->
+            <!-- Visual state manager -->
             <Label FontSize="Large" Text="Visual state manager" />
             <stateButton:StateButton HorizontalOptions="Center">
                 <stateButton:StateButton.Content>
@@ -193,7 +196,7 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-            <!--  Complex  -->
+            <!-- Complex -->
             <Label FontSize="Large" Text="Complex" />
             <stateButton:StateButton Clicked="Card_OnClicked" HorizontalOptions="Fill">
                 <stateButton:StateButton.Behaviors>
@@ -285,7 +288,7 @@
                      BackgroundColor="LightGray"
                      HeightRequest="1"
                      HorizontalOptions="Fill" />
-            <!--  Experiment  -->
+            <!-- Experiment -->
             <Label FontSize="Large" Text="Experiment" />
             <stateButton:StateButton HorizontalOptions="Fill">
                 <stateButton:StateButton.Content>

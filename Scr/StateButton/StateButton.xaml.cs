@@ -159,6 +159,8 @@ namespace StateButton
         {
             if (!IsEnabled) return;
 
+            if (State.Equals(ButtonStateEnum.NotPressed)) return;
+
             Released?.Invoke(this, EventArgs.Empty);
             ReleasedCommand?.Execute(ReleasedCommandParameter);
 

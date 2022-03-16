@@ -55,5 +55,10 @@ namespace App
         {
             await DisplayAlert("Nested state button clicked", string.Empty, "OK");
         }
+
+        private async void BtnNotInScrollView_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ButtonNotInScrollViewPage());
+        }
     }
 }

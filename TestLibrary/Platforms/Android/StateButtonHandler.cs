@@ -1,39 +1,29 @@
-﻿using Android.Content;
-using Android.Views;
-using StateButton.Android;
-using System.Linq;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
+﻿using Android.Views;
 using Android.Views.Accessibility;
-using AndroidView = Android.Views;
-using Android.Runtime;
+using Microsoft.Maui.Handlers;
+using Microsoft.Maui.Platform;
+using static Android.Views.View;
+using View = Android.Views.View;
 
-[assembly: ExportRenderer(typeof(StateButton.StateButton), typeof(StateButtonRenderer))]
-namespace StateButton.Android
+namespace TestLibrary
 {
-    public class StateButtonRenderer : FrameRenderer
+    partial class StateButtonHandler : ViewHandler<StateButton, ContentViewGroup>
     {
-        public StateButtonRenderer(Context context) : base(context)
+        protected override ContentViewGroup CreatePlatformView()
         {
-            SetAccessibilityDelegate(new MyAccessibilityDelegate());
+            return new(Context);
         }
 
         private Rect rect;
-        protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
+        protected override void ConnectHandler(ContentViewGroup platformView)
         {
-            base.OnElementChanged(e);
+            base.ConnectHandler(platformView);
 
-            if (e.OldElement != null) return;
+            platformView.SetAccessibilityDelegate(new MyAccessibilityDelegate());
 
-            if (!e.NewElement.GestureRecognizers.Any())
-                return;
-
-            if (e.NewElement.GestureRecognizers.All(x => x.GetType() != typeof(TouchGestureRecognizer)))
-                return;
-
-            Touch += (sender, te) =>
+            platformView.Touch += (sender, te) =>
             {
-                var v = (AndroidView.View)sender;
+                var v = (View)sender;
                 switch (te.Event.Action)
                 {
                     case MotionEventActions.Down:
@@ -48,7 +38,7 @@ namespace StateButton.Android
                         break;
 
                     case MotionEventActions.Up:
-                        
+
                         foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                         {
                             if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
@@ -91,31 +81,15 @@ namespace StateButton.Android
             };
         }
 
-        public override bool OnKeyUp([GeneratedEnum] Keycode keyCode, KeyEvent e)
-        {
-            if(keyCode == Keycode.Space || keyCode == Keycode.Enter)
-            {
-                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
-                {
-                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
-                    {
-                        touchGestureRecognizer.Clicked();
-                    }
-                }
-            }
-
-            return base.OnKeyUp(keyCode, e);
-        }
 
         private class MyAccessibilityDelegate : AccessibilityDelegate
         {
-            public override void OnInitializeAccessibilityNodeInfo(AndroidView.View host, AccessibilityNodeInfo info)
+            public override void OnInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info)
             {
                 base.OnInitializeAccessibilityNodeInfo(host, info);
                 info.ClassName = "android.widget.Button";
                 info.Clickable = true;
             }
         }
-
     }
 }

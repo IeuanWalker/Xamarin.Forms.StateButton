@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Border xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"     
+        xmlns:stateButton="clr-namespace:TestLibrary;assembly=TestLibrary"
+        x:Class="TestLibrary.StateButton">
+    <Border.GestureRecognizers>
+        <stateButton:TouchGestureRecognizer x:Name="TouchRecognizer" />
+    </Border.GestureRecognizers>
+</Border>

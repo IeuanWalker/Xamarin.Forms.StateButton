@@ -1,3 +1,6 @@
+| :warning:        | This NuGet/ repo is now in maintenance mode and support will end once xamarin.forms is no longer supported. _Bug fixes only._ </br> MAUI repo - https://github.com/IeuanWalker/Maui.StateButton  |
+|---------------|:------------------------|
+
 # Xamarin.Forms.StateButton  [![Nuget](https://img.shields.io/nuget/v/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) [![Nuget](https://img.shields.io/nuget/dt/IeuanWalker.StateButton)](https://www.nuget.org/packages/IeuanWalker.StateButton) 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)

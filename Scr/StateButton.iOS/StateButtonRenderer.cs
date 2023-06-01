@@ -1,5 +1,6 @@
 using Foundation;
 using StateButton.iOS;
+using System;
 using System.Linq;
 using UIKit;
 using Xamarin.Forms;
@@ -17,66 +18,94 @@ namespace StateButton.iOS
 
         protected override void OnElementChanged(ElementChangedEventArgs<Frame> e)
         {
-            base.OnElementChanged(e);
-
-            AccessibilityTraits = UIAccessibilityTrait.Button;
-
-            if (e.OldElement != null) return;
-
-            if (!e.NewElement.GestureRecognizers.Any())
-                return;
-
-            if (e.NewElement.GestureRecognizers.All(x => x.GetType() != typeof(TouchGestureRecognizer)))
-                return;
-
-            AddGestureRecognizer(new UITapGestureRecognizer(() =>
+            try
             {
-                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+                base.OnElementChanged(e);
+
+                AccessibilityTraits = UIAccessibilityTrait.Button;
+
+                if (e.OldElement != null) return;
+
+                if (!e.NewElement.GestureRecognizers.Any())
+                    return;
+
+                if (e.NewElement.GestureRecognizers.All(x => !(x is TouchGestureRecognizer)))
+                    return;
+
+                AddGestureRecognizer(new UITapGestureRecognizer(() =>
                 {
-                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                    foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                     {
-                        touchGestureRecognizer.Clicked();
+                        if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                        {
+                            touchGestureRecognizer.Clicked();
+                        }
                     }
-                }
-            }));
+                }));
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         public override void TouchesMoved(NSSet touches, UIEvent evt)
         {
-            base.TouchesMoved(touches, evt);
-
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+            try
             {
-                if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                base.TouchesMoved(touches, evt);
+
+                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                 {
-                    touchGestureRecognizer.Released();
+                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                    {
+                        touchGestureRecognizer.Released();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {
-            base.TouchesBegan(touches, evt);
-
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+            try
             {
-                if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                base.TouchesBegan(touches, evt);
+
+                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                 {
-                    touchGestureRecognizer.Pressed();
+                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                    {
+                        touchGestureRecognizer.Pressed();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
 
         public override void TouchesCancelled(NSSet touches, UIEvent evt)
         {
-            base.TouchesCancelled(touches, evt);
-
-            foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
+            try
             {
-                if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                base.TouchesCancelled(touches, evt);
+
+                foreach (IGestureRecognizer recognizer in Element.GestureRecognizers.Where(x => x is TouchGestureRecognizer))
                 {
-                    touchGestureRecognizer.Released();
+                    if (recognizer is TouchGestureRecognizer touchGestureRecognizer)
+                    {
+                        touchGestureRecognizer.Released();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                // ignored
             }
         }
     }
